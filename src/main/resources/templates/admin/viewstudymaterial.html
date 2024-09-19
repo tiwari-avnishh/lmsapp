@@ -1,0 +1,52 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head>
+	</head>
+	<body>
+		<section>
+
+	<div class="row" style="border: 2px solid black; background-color: bisque;">
+		<h1 class="text-danger text-center fw-bold">    <u><b>VIEW STUDY MATERIAL</b></u></h1>
+		<div style="overflow-x:auto;"></div>
+		<table class="table table-bodered" style="background-color: bisque;border: 2px solid black; color: black;">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Program</th>
+					<th>Branch</th>
+					<th> Year</th>
+					<th>Material Type</th>
+					<th>Subject</th>
+					<th>Topic</th>
+					<th>File Name</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbod>
+				<tr th:each="m:${mlist}">
+					<td th:text="${m.id}"></td>
+					<td th:text="${m.program}"></td>
+					<td th:text="${m.branch}"></td>
+					<td th:text="${m.year}"></td>
+					<td th:text="${m.materialtype}"></td>
+					<td th:text="${m.subject}"></td>
+					<td th:text="${m.topic}"></td>
+
+					<td>
+						<a th:href="@{'/mat/'+${m.filename}}" download><span th:text="${m.filename}"></span></a>
+					</td>
+					<td>
+						<a  th:href="@{viewstudymaterial/deletematerial(id=${m.id})}">
+							<button type="button" onclick="return confirm('Are you sure')" class="btn btn-danger btn-sm">Delete</button>
+						</a>
+					</td>
+
+
+
+				</tr>
+			</tbod>
+			
+		</table>
+	</div>
+		</section>
+	</body>
+</html>

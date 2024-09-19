@@ -1,0 +1,10 @@
+.topbar{
+    background-color: brown;
+    border-bottom: 2px dotted orange;
+}
+.rishta {
+    min-height: 5vh!important;
+    padding: 10px;
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))!important;
+    transition: 0.5s!important;
+}

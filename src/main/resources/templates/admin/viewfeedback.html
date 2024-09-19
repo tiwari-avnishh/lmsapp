@@ -1,0 +1,50 @@
+ <html th:replace="admin/adminbase::layout(~{::section})">
+	<head></head>
+	<body>
+		<section>
+			<div class="row" style="background-color: bisque; border: 3px solid black; ">
+				
+				<h1 class="text-danger text-center fw-bold"><U><B>FEEDBACK MANAGEMENT</B></U>  </h1>
+				<table class="table table-bordered" style="margin:auto; border: 2px solid black;">
+					<thead class="table" style="color: rgb(255, 255, 255); background-color: rgb(190, 77, 16);">
+						<tr>
+							<th>Enrollment No.</th>
+							<th>Name</th>
+							<th>Email Address</th>
+							<th>Contact No.</th>
+							<th>Feedback Subject</th>
+							<th>Feedback Message</th>
+							<th>Feedback Date</th>
+							<th>Delete</th>
+							</tr>
+						
+					</thead>
+					<tbody>
+						<tr th:each="f:${flist}">
+													<td th:text="${f.enrollmentno}"></td>
+													<td th:text="${f.name}"></td>
+													<td th:text="${f.emailaddress}"></td>
+													<td th:text="${f.contactno}"></td>
+													<td th:text="${f.subject}"></td>
+													<td th:text="${f.message}"></td>
+													<td th:text="${f.resdate}"></td>
+													<td>
+														<a th:herf="@{viewfeedback/delete(resid=${f.resid})}">
+														<button class="btn btn-danger" onclick=" return confirm('Are you want to delete ')">Delete</button>
+														</a>
+													</td>
+													
+													
+												</tr>
+						
+					
+					</tbody>
+					
+					
+					
+				</table>
+			</div>
+		</section>
+		
+	</body>
+</html>

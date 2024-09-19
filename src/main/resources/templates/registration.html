@@ -1,0 +1,139 @@
+<html lang="en" th:replace="base::layout(~{::section})">
+  <head>
+  </head>
+  <body>
+   <section>
+			
+	<div class="row" style="background-color:  brown;">
+		<h3 class="text-center" style="color: bisque;"><u>Student Registration</u> </h3>
+	</div>
+	<div class="row  mt-4" style="justify-content: center;" th:if="${message}">
+										<div class="col-sm-8">
+											<div class="row">
+												<h4 class="dismissable" style="background-color: mediumseagreen; color: white;padding: 20px;" th:text="${message}"></h4>
+											</div>
+										</div>
+								</div>
+	<div class="row" style="background-color: bisque;">
+		<form method="post" th:object="${dto}" class="form-group">
+			<table class="table table-bordered shadow" style="margin: auto; width: 60%;">
+				<tr>
+					<td>
+						Enter your Enrollmentno
+					</td>
+					<td>
+						<input type="text" th:field="${dto.enrollmentno}" required class="form-control" placeholder="Enter your emrollmentno..." />
+					</td>
+				</tr>
+				<tr>
+									<td>
+										Enter your name
+									</td>
+									<td>
+										<input type="text" th:field="${dto.name}" required class="form-control" placeholder="Enter your Name" />
+									</td>
+								</tr>
+								<tr>
+													<td>
+														Enter your father name
+													</td>
+													<td>
+														<input type="text" th:field="${dto.fname}" required class="form-control" placeholder="Enter your Father name"/>
+													</td>
+												</tr>
+												<tr>
+																									<td>
+																										Enter your Mother name 
+																									</td>
+																									<td>
+																										<input type="text" th:field="${dto.mname}" required class="form-control" placeholder="Enter your Mother name"/>
+																									</td>
+																								</tr>
+												<tr>
+														<td>
+															Select Gender
+														</td>
+														<td>
+																<input type="radio"  th:field="${dto.gender}"  required value="male"> Male
+																<input type="radio"  th:field="${dto.gender}" required value="female"> female
+															</td>
+														</tr>		
+														<tr>
+																	<td>
+															Enter your Address
+																<td>
+																	<input type="text"  th:field="${dto.address}" required class="form-control" placeholder="Enter your Address" />
+																</tr>	
+																<tr>
+																		<td>
+																			Program
+																		</td>
+																	<td>
+																		<select class="form-control"  th:field="${dto.program}">
+																		<option value="B-Tech"> B-Tech</option>
+																		<option value="BCA"> BCA</option>
+																		<option value="Diploma"> Diploma</option>
+																		</select>
+																	</td>
+																	</tr>					
+																<tr>
+																			<td>
+																				Branch
+																			</td>
+																			<td>
+																				<select class="form-control"  th:field="${dto.branch}">
+																					<option value="IT"> IT</option>
+																					<option value="CS"> CS</option>
+																					<option value="AI"> AI</option>
+																				</select>
+																			</td>
+													</tr>							
+													<tr>
+									             <td>
+													Year
+												</td>
+												<td>
+													<select class="form-control"  th:field="${dto.year}">
+														<option value="1st Year"> 1st Year</option>
+														<option value="2nd Year"> 2nd Year</option>
+														<option value="3rd Year"> 3rd Year</option>
+													</select>
+												</td>
+												</tr>
+												<tr>
+													<td>
+														Contact no
+													</td>
+													<td>
+														<input type="text"  th:field="${dto.contactno}" required class="form-control" placeholder="Enter your contact no."/>
+													</td>
+												</tr>		
+												<tr>
+													<td>
+														Enter Your E-mail Address
+													</td>
+												<td>
+													<input type="text"  th:field="${dto.emailaddress}" required class="form-control" placeholder="Enter email address"/>
+												</td>
+												</tr>	
+												<tr>
+													<td>
+														Enter Your Password
+													</td>
+												<td>
+													<input type="password"  th:field="${dto.password}" required class="form-control" placeholder="Enter your Password"/>
+												</td>
+											</tr>		
+											<tr>
+												<td>
+												</td>
+												<td>
+													<button type="submit" class="btn btn-danger"> Submit</button>
+												</td>
+											</tr>																															
+			</table>
+		</form>
+	</div>
+ </section>
+  </body>
+</html>

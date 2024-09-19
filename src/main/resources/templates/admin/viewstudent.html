@@ -1,0 +1,50 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head>
+	</head>
+	<body>
+		<section>
+			<div class="row" style="background-color: brown; border: 1px solid black; ">
+
+	
+		<h1 class=" text-center fw-bold" style="background-color: brown; color: white;"> Student Management</h1>
+		<table class="table-borderd" style="margin: auto; color: black; border: 1px solid black; background-color: bisque;">
+					<thead style="border: 1px solid black; height: 50px; width: 1500px;">
+						<tr style="border: 1px solid black;">
+							<th>				
+								Enrollment Number
+							
+		</th>
+							<th> Name</th>
+							<th> Father Name</th>
+							<th> Mother Name</th>
+							<th> Gender</th>
+							<th> Address</th>
+							<th> Program</th>
+							<th> Branch</th>
+							<th> Year</th>
+							<th> contact No</th>
+							<th> Email Address</th>
+						</tr>
+					</thead>
+					<tbody >
+						<tr th:each="s:${stu}"  style="border: 1px solid black;">
+							<td th:text="${s.enrollmentno}"></td>
+							<td th:text="${s.name}"></td>
+							<td th:text="${s.fname}"></td>
+							<td th:text="${s.mname}"></td>
+							<td th:text="${s.gender}"></td>
+							<td th:text="${s.address}"></td>
+							<td th:text="${s.program}"></td>
+							<td th:text="${s.branch}"></td>
+							<td th:text="${s.year}"></td>
+							<td th:text="${s.contactno}"></td>
+							<td th:text="${s.emailaddress}"></td>
+
+						</tr>
+					</tbody>
+				</table>
+				</div>
+
+		</section>
+	</body>
+</html>

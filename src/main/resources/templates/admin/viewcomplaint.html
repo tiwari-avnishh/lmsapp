@@ -1,0 +1,47 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head></head>
+	<body>
+		<section>
+			<div class="row" style="border: 2px solid black; background-color: bisque;">
+				
+				<h1 class="text-danger text-center fw-bold">  <u><b>COMPLAINT MANAGEMENT</b></u>  </h1>
+				<table class="table table-bordered" style="margin:auto; color: black;">
+					<thead class="table" style="background-color: bisque; color: black; border: 2px solid black;">
+						<tr>
+							<th>Enrollment No.</th>
+							<th>Name</th>
+							<th>Email Address</th>
+							<th>Contact No.</th>
+							<th>Complaint Subject</th>
+							<th>Complaint Message</th>
+							<th>Complaint Date</th>
+							<th>Delete</th>
+							</tr>
+						
+					</thead>
+					<tbody>
+						<tr th:each="f:${flist}">
+							<td th:text="${f.enrollmentno}"></td>
+				            <td th:text="${f.name}"></td>
+							<td th:text="${f.emailaddress}"></td>
+							<td th:text="${f.contactno}"></td>
+							<td th:text="${f.subject}"></td>
+						    <td th:text="${f.message}"></td>
+							<td th:text="${f.resdate}"></td>
+							<td>
+								<a href="#" class="btn btn-danger">Delete</a>
+							</td>
+																			
+																			
+						</tr>
+						
+					</tbody>
+					
+					
+					
+				</table>
+			</div>
+		</section>
+		
+	</body>
+</html>

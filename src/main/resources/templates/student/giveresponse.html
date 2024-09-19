@@ -1,0 +1,60 @@
+<html th:replace="student/studentbase::layout(~{::section})">
+	<head>	
+	</head>
+	<body>
+		<section>
+		<div class="container-fluid">
+			<div class="row">	
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4 text-center">
+					<h1 class="text-center shadow" style="color: rgb(128, 0, 64);font-weight: 700;border-radius: 5px; background-color: brown; color: white;">
+						Give Response
+					</h1>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-sm-8 mx-auto shadow-lg py-2" style="background-color: brown; color: black;">
+					<form method="post" th:object="${dto}">
+						<table class="table table-borderd" style="margin: auto; width: 60%; background-color: bisque ; color: black;">
+							<tr>
+								<td>
+									Select Response Type
+								</td>
+								<td>
+									<select th:field="${dto.responsetype}" class="form-control" style="background-color: white;">
+										<option value="Feedback" style="background-color: white;">Feedback</option>
+										<option value="Complaint" style="background-color: white;">Complaint</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Enter Reponse Subject
+								</td>
+								<td>
+									<input type="text" style="background-color: white;" placeholder="Enter Response Subject" required class="form-control" th:field="${dto.subject}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Enter Response Message
+								</td>
+								<td>
+									<textarea class="form-control"  style="background-color: white;" required placeholder="Enter Response Message" th:field="${dto.message}"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<button type="submit" class="btn btn-danger">Submit</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>	
+</body>
+</html>

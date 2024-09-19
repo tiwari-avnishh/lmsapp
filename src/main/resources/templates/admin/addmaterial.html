@@ -1,0 +1,94 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head>
+	</head>
+	<body>
+		<section>
+
+	<div class="row" style="background-color: bisque; border: 2px solid black;">
+		<h1 class="text-danger text-center fw-bold">   <u><b> ADD STUDY MATERIAL</b></u></h1>
+		<div th:if="${msg}">
+			<p th:text="${msg}" style="text-align: center;color: green;"></p>
+		</div>
+		<form class="form-group" th:object="${dto}" method="post" enctype="multipart/form-data">
+			<table class="table table-borderd" style="margin: auto; width: 60%; border: 2px solid black; background-color: white;">
+				<tr>
+					<td>
+						Select Program						
+					</td>
+					<td>
+					<select class="form-control"  th:field="${dto.program}" style="color: white;">
+					<option value="B-Tech"> B-Tech</option>
+					<option value="BCA"> BCA</option>
+					<option value="Diploma"> Diploma</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Select Branch
+					</td>
+					<td>
+					<select class="form-control"  th:field="${dto.branch}" style="color: white;">
+					<option value="IT"> IT</option>
+						<option value="CS"> CS</option>
+					<option value="AI"> AI</option>
+					</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Select Year</td>
+				<td>
+				<select class="form-control"  th:field="${dto.year}" style="color: white;">
+				<option value="1st Year"> 1st Year</option>
+				<option value="2nd Year"> 2nd Year</option>
+				<option value="3rd Year"> 3rd Year</option>
+				</select>
+				</td>				
+				</tr>
+				
+				<tr>
+					<td>Select Material Type</td>
+					<td>
+						<select class="form-control" th:field="${dto.materialtype}" style="color: white;">
+							<option value="smat">Study Material </option>
+							<option value="assign">Assigment  </option>
+
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Enter Subject</td>
+					<td>
+						<input type="text"  style="color: rgb(255, 255, 255) ; " th:field="${dto.subject}" class="form-control "  required/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Enter Topic</td>
+					<td>
+						<input type="text"   style="color: antiquewhite;" th:field="${dto.topic}" class="form-control" required/>
+					</td>
+				</tr>
+				
+				<tr>
+									<td>Select file</td>
+									<td>
+										<input type="file"  style="color: antiquewhite;" th:field="${dto.filedata}" class="form-control" required/>
+									</td>
+								</tr>
+				
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit" class="btn btn-danger">Add Material</button>
+					</td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+		</section>
+	</body>
+</html>

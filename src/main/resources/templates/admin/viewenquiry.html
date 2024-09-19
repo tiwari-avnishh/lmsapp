@@ -1,0 +1,51 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head>
+	</head>
+	<body>
+		<section>
+
+	<div class="row" style="background-color: bisque; border: 3px solid black;">
+		<h1 class="text text-center fw-bold" style="color: rgb(255, 255, 255); border: 2px; background-color: brown; border: 3px solid black;"> View Enquiry</h1>
+		<table class="table-borderd" style="margin: auto;" >
+			<thead>
+				<tr style="color: black ;">
+					<th>Name</th>
+					<th>Gender</th>
+					<th>Contact No</th>
+					<th>Email Addresss</th>
+					<th> Enquiry Test</th>
+					<th> Enquiry Date</th>
+					<th> Delete</th>
+
+				</tr>
+						</thead>
+			<tbody>
+				
+				<tr th:each="e:${eqlist}" style="color: black;">
+					<td th:text="${e.name}"></td>
+					<td th:text="${e.gender}"></td>
+					<td th:text="${e.contactno}"></td>
+					<td th:text="${e.emailaddress}"></td>
+					<td th:text="${e.enquirytext}"></td>
+					<td th:text="${e.posteddate}"></td>
+					<td>
+						<a class="btn btn-danger" href="#">Delete</a>
+					</td>
+
+
+
+
+
+					
+				</tr>
+
+
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		</section>
+	</body>
+</html>
